@@ -1,12 +1,9 @@
 import 'chromedriver';
-import { Builder, ThenableWebDriver, WebElement, By, WebElementPromise } from 'selenium-webdriver';
-import { Options as OptionsChrome } from 'selenium-webdriver/chrome';
-const options = new OptionsChrome().addArguments("--start-fullscreen");
+import { ThenableWebDriver, By, WebElementPromise } from 'selenium-webdriver';
 
 export class Browser {
-  private driver: ThenableWebDriver;
-  public constructor(private browserName: string) {
-    this.driver = new Builder().forBrowser(browserName).setChromeOptions(options).build();
+  public constructor(private driver: ThenableWebDriver) {
+    this.driver = driver;
   }
 
   public async _driver(){

@@ -1,4 +1,4 @@
-import { WebDriver, Builder } from 'selenium-webdriver';
+import { WebDriver, Builder, ThenableWebDriver } from 'selenium-webdriver';
 import chromedriver from 'chromedriver';
 import { Options as ChromeOptions } from 'selenium-webdriver/chrome';
 
@@ -10,7 +10,7 @@ chromedriver;
 export const setupDriver = async ({ browser, options, hasExtension, timeout = 10000 }: TSetup) => {
   try {
     let builder = new Builder().forBrowser(browser);
-    let driver: WebDriver;
+    let driver: ThenableWebDriver;
 
     if (options) {
       if (browser === BrowsersEnum.Chrome) {

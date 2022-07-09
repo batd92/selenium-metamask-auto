@@ -1,13 +1,7 @@
-import { Options as OptionsChrome } from 'selenium-webdriver/chrome';
-
-import { setupDriver } from '../setup';
-import { BrowsersEnum } from '../utils/_types';
 import * as metamaskWelcomeActions from '../pages/metamask/welcome/actions';
-import { METAMASK_EXTENSION_PATH, FAKE_RECOVERY_PHRASE, FAKE_PASSWORD } from '../utils/_consts';
+import { FAKE_RECOVERY_PHRASE, FAKE_PASSWORD } from '../utils/_consts';
 
-async function importMetamaskAccount() {
-  const options = new OptionsChrome().addExtensions([METAMASK_EXTENSION_PATH]);
-  let driver = await setupDriver({ browser: BrowsersEnum.Chrome, options, hasExtension: true });
+export const importMetamaskAccount = async (driver: any) => {
   if (driver) {
     try {
       await metamaskWelcomeActions.clickBtnStartNow(driver);
@@ -20,11 +14,8 @@ async function importMetamaskAccount() {
       await metamaskWelcomeActions.clickBtnImport(driver);
     } catch (e) {
       console.log(e);
-    }
-    finally {
+    } finally {
       // await driver.quit();
     }
   }
-}
-
-importMetamaskAccount();
+};

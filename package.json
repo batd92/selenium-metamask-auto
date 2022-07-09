@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "test": "nodemon --exec npx ts-node src/__tests__/importMetamaskAccount.ts"
+    "test": "nodemon --exec npx ts-node src/__tests__/runMain.ts"
   },
   "dependencies": {
     "selenium-webdriver": "^4.1.0"
