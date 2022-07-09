@@ -16,13 +16,13 @@ export const setupDriver = async ({ browser, options, hasExtension, timeout = 10
       if (browser === BrowsersEnum.Chrome) {
         driver = builder.setChromeOptions(options as ChromeOptions).build();
       }
-      if (hasExtension) {
-        // Switch to extension tab
-        const handles = await driver.getAllWindowHandles();
-        await driver.switchTo().window(handles[1]);
-        // await driver.close();
-        await driver.switchTo().window(handles[0]);
-      }
+      // if (hasExtension) {
+      //   // Switch to extension tab
+      //   const handles = await driver.getAllWindowHandles();
+      //   await driver.switchTo().window(handles[1]);
+      //   // await driver.close();
+      //   await driver.switchTo().window(handles[0]);
+      // }
     } else {
       driver = builder.build();
     }

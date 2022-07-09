@@ -10,6 +10,11 @@ const selectors = {
   inputConfirmPassword: '#confirm-password',
   checkboxTermsOfUse: '#create-new-vault__terms-checkbox',
   btnImport: `.first-time-flow ${BTN_PRIMARY}`,
+  btnDoneLogin: '//*[@id="app-content"]/div/div[2]/div/div/button',
+  btnNext: '#app-content > div > div.main-container-wrapper > div > div.permissions-connect-choose-account__footer-container > div.permissions-connect-choose-account__bottom-buttons > button.button.btn--rounded.btn-primary',
+  btnConnect: '#app-content > div > div.main-container-wrapper > div > div.page-container.permission-approval-container > div.permission-approval-container__footers > div.page-container__footer > footer > button.button.btn--rounded.btn-primary.page-container__footer-button',
+  btnApprove: `#app-content > div > div.main-container-wrapper > div > div.confirmation-footer > div.confirmation-footer__actions > button.button.btn--rounded.btn-primary`,
+  btnSwitchNetwork: `#app-content > div > div.main-container-wrapper > div > div.confirmation-footer > div.confirmation-footer__actions > button.button.btn--rounded.btn-primary`,
 };
 
 export default selectors;

@@ -8,6 +8,11 @@ export const clickElement = async (driver: WebDriver, selector: string, by?: TBy
   await element.click();
 };
 
+export const getElement = async (driver: WebDriver, selector: string, by?: TByOptions) => {
+  const element = await findElement(driver, selector, by);
+  return element;
+};
+
 export const fillText = async (
   driver: WebDriver,
   selector: string,

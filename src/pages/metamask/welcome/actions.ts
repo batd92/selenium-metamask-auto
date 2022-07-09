@@ -1,6 +1,6 @@
 import { WebDriver } from 'selenium-webdriver';
 
-import { clickElement, fillText } from '../../../utils/helpers/actions';
+import { clickElement, fillText, getElement } from '../../../utils/helpers/actions';
 import selectors from './selectors';
 
 export const clickBtnStartNow = async (driver: WebDriver) => {
@@ -37,4 +37,24 @@ export const checkTermsOfUse = async (driver: WebDriver) => {
 
 export const clickBtnImport = async (driver: WebDriver) => {
   await clickElement(driver, selectors.btnImport);
+};
+
+export const clickBtnNext = async (driver: WebDriver) => {
+  await clickElement(driver, selectors.btnNext);
+};
+
+export const clickBtnConnect = async (driver: WebDriver) => {
+  await clickElement(driver, selectors.btnConnect);
+};
+
+export const clickBtnApprove = async (driver: WebDriver) => {
+  await clickElement(driver, selectors.btnApprove);
+};
+
+export const clickBtnSwitchNetwork = async (driver: WebDriver) => {
+  await clickElement(driver, selectors.btnSwitchNetwork);
+};
+
+export const getDoneElement = async (driver: WebDriver) => {
+  await getElement(driver, selectors.btnDoneLogin);
 };
