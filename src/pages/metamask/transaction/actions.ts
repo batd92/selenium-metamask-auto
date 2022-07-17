@@ -9,9 +9,9 @@ export const clickBtnEdit = async (driver: WebDriver) => {
   await clickElement(driver, selectors.btnEdit);
 };
 
-export const clickBtnEditSuggestedGasFee = async (driver: WebDriver) => {
-  await clickElement(driver, selectors.btnEditSuggestedGasFee);
-};
+// export const clickBtnEditSuggestedGasFee = async (driver: WebDriver) => {
+//   await clickElement(driver, selectors.btnEditSuggestedGasFee);
+// };
 
 export const fillGasLimit = async (driver: WebDriver, gasLimit: string) => {
   await fillText(driver, selectors.gasLimit, gasLimit);

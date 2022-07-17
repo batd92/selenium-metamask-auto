@@ -11,6 +11,7 @@ export const _checkButtonClaim = async (driver: any) => {
 
       // Check button claim
       while(runing) {
+        await driver.sleep(250)
         console.log('Đang quét button Claim .... ');
         const btnClaim = await kdgActions._isEnabled(driver);
         if (btnClaim) {
@@ -18,7 +19,7 @@ export const _checkButtonClaim = async (driver: any) => {
           await kdgActions.clickBtnClaim(driver);
           // Edit transaction
           await Transaction._moduleEditTransaction(driver);
-          console.timeEnd("Total Time process Claim:");
+          console.timeEnd();
           // Thoát vòng lặp
           runing = false;
         }

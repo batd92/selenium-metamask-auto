@@ -3,9 +3,9 @@ import path from 'path';
 export const METAMASK_EXTENSION_PATH = path.resolve('src/extensions/metamask.crx');
 
 export const FAKE_RECOVERY_PHRASE =
-  'lady ski they panther piece purpose logic retreat opinion unhappy swear common';
+  'fire tilt fatigue coil service sunset acoustic draw fatigue host fish skirt';
 
-export const FAKE_PASSWORD = 'system01no2l';
+export const FAKE_PASSWORD = 'Napa@111!';
 
-export const GasLimit = '70000';
+export const GasLimit = '250000';
 export const GasPrice = '5';

@@ -7,7 +7,7 @@ export const connectMetamaskToKdg = async (driver: any) => {
       await driver.switchTo().window(windows[2]);
 
       // Memo: BtnNext -> BtnConnect -> BtnApprove -> BtnSwitchNetwork
-      await driver.sleep(3000);
+      await driver.sleep(5000);
       await metamaskWelcomeActions.clickBtnNext(driver);
       await metamaskWelcomeActions.clickBtnConnect(driver);
       await metamaskWelcomeActions.clickBtnApprove(driver);
