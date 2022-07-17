@@ -4,9 +4,9 @@ import { GasPrice, GasLimit } from '../utils/_consts';
 export const _moduleEditTransaction = async (driver: any) => {
   if (driver) {
     try {
-      const windows = await driver.getAllWindowHandles();
-      await driver.switchTo().window(windows[1]);
-      
+      // const windows = await driver.getAllWindowHandles();
+      // await driver.switchTo().window(windows[1]);
+      driver.get("chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html");
       // Memo: Close Dark Mode -> Edit -> EditSuggestedGasFee - > gasLimit -> gasPrice -> Save -> Confirm
       let darkMode = await metamaskTransactionActions.checkBtnDarkModeDisplay(driver);
       if (darkMode) {
