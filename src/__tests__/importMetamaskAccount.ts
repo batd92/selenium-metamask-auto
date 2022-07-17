@@ -4,8 +4,10 @@ import { FAKE_RECOVERY_PHRASE, FAKE_PASSWORD } from '../utils/_consts';
 export const importMetamaskAccount = async (driver: any) => {
   if (driver) {
     try {
-      let windows = await driver.getAllWindowHandles();
+      const windows = await driver.getAllWindowHandles();
       await driver.switchTo().window(windows[0]);
+      
+      // Memo: Start -> ImportWallet -> NoThanks -> RecoveryPhrase -> NewPassword -> ConfirmPassword -> Checkbox TermsOfUse -> Import -> DarkMode
       await metamaskWelcomeActions.clickBtnStartNow(driver);
       await metamaskWelcomeActions.clickBtnImportWallet(driver);
       await metamaskWelcomeActions.clickBtnNoThanks(driver);
@@ -14,6 +16,7 @@ export const importMetamaskAccount = async (driver: any) => {
       await metamaskWelcomeActions.fillConfirmPassword(driver, FAKE_PASSWORD);
       await metamaskWelcomeActions.checkTermsOfUse(driver);
       await metamaskWelcomeActions.clickBtnImport(driver);
+      // await metamaskWelcomeActions.clickBtnDarkMode(driver);
       await driver.sleep(4000);
     } catch (e) {
       console.log(e);

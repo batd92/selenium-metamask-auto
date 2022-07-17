@@ -8,8 +8,13 @@ export class HomePage extends Page {
     this.setUrl(`${config.baseUrl}/`);
   }
   async _connectModule() {
-    await kgdActions.closeAlertError(await this.browser._driver());
-    await kgdActions.clickBtnStarConnectWallet(await this.browser._driver());
-    await kgdActions.clickBtnCnMetaMask(await this.browser._driver());
+    try {
+      await kgdActions.closeAlertError(await this.browser._driver());
+      await kgdActions.clickBtnStarConnectWallet(await this.browser._driver());
+      await kgdActions.clickBtnCnMetaMask(await this.browser._driver());
+    } catch (error) {
+      console.log('_connectModule error: ', error);
+      // process.exit();
+    }
   }
 }

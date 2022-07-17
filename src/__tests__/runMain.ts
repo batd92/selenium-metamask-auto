@@ -7,6 +7,8 @@ import { importMetamaskAccount } from './importMetamaskAccount';
 import { _moduleKDG } from './runAndCheckKDG';
 import { connectMetamaskToKdg } from './connectMetamaskToKdg';
 
+import { _checkButtonClaim } from './handleButtonClaim';
+
 async function _moduleRunMain() {
   // Init web driver
   const options = new OptionsChrome();
@@ -21,6 +23,9 @@ async function _moduleRunMain() {
   await _moduleKDG(driver);
   // Connect metamask to KDG
   await connectMetamaskToKdg(driver);
+
+  // Check button claim
+  await _checkButtonClaim(driver);
 
 }
 _moduleRunMain();

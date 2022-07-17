@@ -15,6 +15,7 @@ const selectors = {
   btnConnect: '#app-content > div > div.main-container-wrapper > div > div.page-container.permission-approval-container > div.permission-approval-container__footers > div.page-container__footer > footer > button.button.btn--rounded.btn-primary.page-container__footer-button',
   btnApprove: `#app-content > div > div.main-container-wrapper > div > div.confirmation-footer > div.confirmation-footer__actions > button.button.btn--rounded.btn-primary`,
   btnSwitchNetwork: `#app-content > div > div.main-container-wrapper > div > div.confirmation-footer > div.confirmation-footer__actions > button.button.btn--rounded.btn-primary`,
+  btnDrakMode: "#popover-content > div > div > section > div.box.popover-header.box--rounded-xl.box--padding-top-6.box--padding-right-4.box--padding-bottom-4.box--padding-left-4.box--display-flex.box--flex-direction-column.box--background-color-background-default > div > button"
 };
 
 export default selectors;

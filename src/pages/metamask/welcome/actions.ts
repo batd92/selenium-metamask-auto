@@ -58,3 +58,7 @@ export const clickBtnSwitchNetwork = async (driver: WebDriver) => {
 export const getDoneElement = async (driver: WebDriver) => {
   await getElement(driver, selectors.btnDoneLogin);
 };
+
+export const clickBtnDarkMode = async (driver: WebDriver) => {
+  await clickElement(driver, selectors.btnDrakMode);
+};

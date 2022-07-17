@@ -3,8 +3,10 @@ import * as metamaskWelcomeActions from '../pages/metamask/welcome/actions';
 export const connectMetamaskToKdg = async (driver: any) => {
   if (driver) {
     try {
-      let windows = await driver.getAllWindowHandles();
+      const windows = await driver.getAllWindowHandles();
       await driver.switchTo().window(windows[2]);
+
+      // Memo: BtnNext -> BtnConnect -> BtnApprove -> BtnSwitchNetwork
       await metamaskWelcomeActions.clickBtnNext(driver);
       await metamaskWelcomeActions.clickBtnConnect(driver);
       await metamaskWelcomeActions.clickBtnApprove(driver);
