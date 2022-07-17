@@ -16,8 +16,7 @@ export const importMetamaskAccount = async (driver: any) => {
       await metamaskWelcomeActions.fillConfirmPassword(driver, FAKE_PASSWORD);
       await metamaskWelcomeActions.checkTermsOfUse(driver);
       await metamaskWelcomeActions.clickBtnImport(driver);
-      // await metamaskWelcomeActions.clickBtnDarkMode(driver);
-      await driver.sleep(4000);
+      await driver.sleep(10000);
     } catch (e) {
       console.log(e);
     } finally {

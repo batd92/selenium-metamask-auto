@@ -1,6 +1,6 @@
 import { WebDriver } from 'selenium-webdriver';
 
-import { clickElement, fillText } from '../../../utils/helpers/actions';
+import { clickElement, fillText, isDisplayed } from '../../../utils/helpers/actions';
 import selectors from './selectors';
 
 // Edit -> EditSuggestedGasFee - > gasLimit -> gasPrice -> Save -> Confirm
@@ -27,4 +27,13 @@ export const clickBtnSave = async (driver: WebDriver) => {
 
 export const clickBtnConfirm = async (driver: WebDriver) => {
   await clickElement(driver, selectors.btnConfirm);
+};
+
+export const checkBtnDarkModeDisplay = async (driver: WebDriver) => {
+  const result = await isDisplayed(driver, selectors.btnDrakMode);
+  return result;
+};
+
+export const closeDarkMode = async (driver: WebDriver) => {
+  await clickElement(driver, selectors.btnDrakMode);
 };

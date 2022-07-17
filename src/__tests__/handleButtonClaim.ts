@@ -11,19 +11,20 @@ export const _checkButtonClaim = async (driver: any) => {
 
       // Check button claim
       while(runing) {
-        console.log('Đang quét button .... ');
-        const isEnabled = kdgActions._isEnabled(driver);
-        if (isEnabled) {
-            await kdgActions.clickBtnClaim(driver);
-
-            // Edit transaction
-            await Transaction._moduleEditTransaction(driver);
-            // Thoát vòng lặp
-            runing = false;
+        console.log('Đang quét button Claim .... ');
+        const btnClaim = await kdgActions._checkBtnClaimDisplay(driver);
+        if (btnClaim) {
+          console.time();
+          await kdgActions.clickBtnClaim(driver);
+          // Edit transaction
+          await Transaction._moduleEditTransaction(driver);
+          console.timeEnd("Total Time process Claim:");
+          // Thoát vòng lặp
+          runing = false;
         }
       }
     } catch (e) {
-      console.log(e);
+      // console.log(e);
     } finally {
       // await driver.quit();
     }

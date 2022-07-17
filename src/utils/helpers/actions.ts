@@ -1,6 +1,6 @@
 import { WebDriver } from 'selenium-webdriver';
 
-import { findElement } from './elements';
+import { findElement, findElementAndCheckDisplay } from './elements';
 import { TByOptions } from './_types';
 
 export const clickElement = async (driver: WebDriver, selector: string, by?: TByOptions) => {
@@ -33,6 +33,14 @@ export const isEnabled = async (driver: WebDriver, selector: string, by?: TByOpt
       return element.isEnabled()
     }
     return false;
+  } catch (error) {
+    console.log('Is Enabled error: ', error);
+  }
+};
+
+export const isDisplayed = async (driver: WebDriver, selector: string, by?: TByOptions) => {
+  try {
+    return findElementAndCheckDisplay(driver, selector, by);
   } catch (error) {
     console.log('Is Enabled error: ', error);
   }

@@ -1,6 +1,6 @@
 import { WebDriver } from 'selenium-webdriver';
 
-import { clickElement, getElement, isEnabled} from '../../../src/utils/helpers/actions';
+import { clickElement, getElement, isEnabled, isDisplayed} from '../../../src/utils/helpers/actions';
 import selectors from './selectors';
 
 export const closeAlertError = async (driver: WebDriver) => {
@@ -21,4 +21,9 @@ export const clickBtnClaim = async (driver: WebDriver) => {
 
 export const _isEnabled = async (driver: WebDriver) => {
   await isEnabled(driver, selectors.btnClaim);
+};
+
+export const _checkBtnClaimDisplay = async (driver: WebDriver) => {
+  const result = await isDisplayed(driver, selectors.btnClaim);
+  return result;
 };
