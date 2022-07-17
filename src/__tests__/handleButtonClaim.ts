@@ -12,7 +12,7 @@ export const _checkButtonClaim = async (driver: any) => {
       // Check button claim
       while(runing) {
         console.log('Đang quét button Claim .... ');
-        const btnClaim = await kdgActions._checkBtnClaimDisplay(driver);
+        const btnClaim = await kdgActions._isEnabled(driver);
         if (btnClaim) {
           console.time();
           await kdgActions.clickBtnClaim(driver);
