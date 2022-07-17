@@ -34,7 +34,7 @@ export const isEnabled = async (driver: WebDriver, selector: string, by?: TByOpt
     }
     return false;
   } catch (error) {
-    console.log('Is Enabled error: ', error);
+    return false;
   }
 };
 

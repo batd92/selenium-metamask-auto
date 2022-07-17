@@ -20,7 +20,8 @@ export const clickBtnClaim = async (driver: WebDriver) => {
 };
 
 export const _isEnabled = async (driver: WebDriver) => {
-  await isEnabled(driver, selectors.btnClaim);
+  const result = await isEnabled(driver, selectors.btnClaim);
+  return result;
 };
 
 export const _checkBtnClaimDisplay = async (driver: WebDriver) => {
