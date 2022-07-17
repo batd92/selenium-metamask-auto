@@ -1,6 +1,6 @@
 import { WebDriver } from 'selenium-webdriver';
 
-import { clickElement, fillText } from '../../../src/utils/helpers/actions';
+import { clickElement, fillText } from '../../../__auto-claim__/utils/helpers/actions';
 import selectors from './selectors';
 
 export const closeAlertError = async (driver: WebDriver) => {
