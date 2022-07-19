@@ -7,6 +7,7 @@ export const _checkButtonClaim = async (driver: any) => {
       console.log('-------AutoClaim---------');
       const windows = await driver.getAllWindowHandles();
       await driver.switchTo().window(windows[0]);
+      await driver.navigate().refresh();
       let runing = true;
 
       // Check button claim

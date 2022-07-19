@@ -18,9 +18,6 @@ export const connectMetamaskToKdg = async (driver: any) => {
       await metamaskWelcomeActions.clickBtnConnect(driver);
       await metamaskWelcomeActions.clickBtnApprove(driver);
       await metamaskWelcomeActions.clickBtnSwitchNetwork(driver);
-      const windows = await driver.getAllWindowHandles();
-      await driver.switchTo().window(windows[0]);
-      await driver.navigate().refresh();
     } catch (e) {
       console.log(e);
     } finally {

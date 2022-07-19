@@ -1,4 +1,4 @@
-import { WebDriver } from 'selenium-webdriver';
+import { until, WebDriver } from 'selenium-webdriver';
 
 import { findElement, findElementAndCheckDisplay } from './elements';
 import { TByOptions } from './_types';
@@ -6,6 +6,7 @@ import { TByOptions } from './_types';
 export const clickElement = async (driver: WebDriver, selector: string, by?: TByOptions) => {
   try {
     const element = await findElement(driver, selector, by);
+    await driver.wait(until.elementIsVisible(element), 10000);
     if (element) {
       await element.click();
     }
@@ -29,6 +30,7 @@ export const getElement = async (driver: WebDriver, selector: string, by?: TByOp
 export const isEnabled = async (driver: WebDriver, selector: string, by?: TByOptions) => {
   try {
     const element = await findElement(driver, selector, by);
+    await driver.wait(until.elementIsVisible(element), 10000);
     if (element) {
       return element.isEnabled()
     }
