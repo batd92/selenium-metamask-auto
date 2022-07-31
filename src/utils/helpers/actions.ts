@@ -55,6 +55,9 @@ export const fillText = async (
   by?: TByOptions,
 ) => {
   const element = await findElement(driver, selector, by);
-  await element.clear();
-  await element.sendKeys(text);
+  await driver.wait(until.elementIsVisible(element), 10000);
+  if (element) {
+    await element.clear();
+    await element.sendKeys(text);
+  }
 };
