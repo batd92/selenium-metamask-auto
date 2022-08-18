@@ -13,16 +13,19 @@ export const _moduleEditTransaction = async (driver: any) => {
         }
       }
       // Memo: Close Dark Mode -> Edit -> EditSuggestedGasFee - > gasLimit -> gasPrice -> Save -> Confirm
-      // let darkMode = await metamaskTransactionActions.checkBtnDarkModeDisplay(driver);
-      // if (darkMode) {
-      //   await metamaskTransactionActions.closeDarkMode(driver);
+      //  let darkMode = await metamaskTransactionActions.checkBtnDarkModeDisplay(driver);
+      //  if (darkMode) {
+      //    await metamaskTransactionActions.closeDarkMode(driver);
       // }
       await metamaskTransactionActions.clickBtnEdit(driver);
-      // await metamaskTransactionActions.clickBtnEditSuggestedGasFee(driver);
+      let BtnEditSuggestedGasFee = await metamaskTransactionActions.checkBtnGasFee(driver);
+      if (BtnEditSuggestedGasFee) {
+        await metamaskTransactionActions.clickBtnEditSuggestedGasFee(driver);
+      }
       await metamaskTransactionActions.fillGasLimit(driver, GasLimit);
       await metamaskTransactionActions.fillGasPrice(driver, GasPrice);
       await metamaskTransactionActions.clickBtnSave(driver);
-      // await metamaskTransactionActions.clickBtnConfirm(driver);
+      await metamaskTransactionActions.clickBtnConfirm(driver);
     } catch (e) {
       console.log(e);
     } finally {

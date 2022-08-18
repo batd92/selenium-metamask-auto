@@ -9,9 +9,9 @@ export const clickBtnEdit = async (driver: WebDriver) => {
   await clickElement(driver, selectors.btnEdit);
 };
 
-// export const clickBtnEditSuggestedGasFee = async (driver: WebDriver) => {
-//   await clickElement(driver, selectors.btnEditSuggestedGasFee);
-// };
+export const clickBtnEditSuggestedGasFee = async (driver: WebDriver) => {
+  await clickElement(driver, selectors.btnEditSuggestedGasFee);
+};
 
 export const fillGasLimit = async (driver: WebDriver, gasLimit: string) => {
   await fillText(driver, selectors.gasLimit, gasLimit);
@@ -34,6 +34,19 @@ export const checkBtnDarkModeDisplay = async (driver: WebDriver) => {
   return result;
 };
 
+export const checkBtnGasFee = async (driver: WebDriver) => {
+  const result = await isDisplayed(driver, selectors.btnEditSuggestedGasFee);
+  return result;
+};
+
 export const closeDarkMode = async (driver: WebDriver) => {
   await clickElement(driver, selectors.btnDrakMode);
 };
+
+// export function clickBtnEditSuggestedGasFee(driver: any) {
+//   throw new Error('Function not implemented.');
+// }
+
+export function _isEnabled(driver: any) {
+  throw new Error('Function not implemented.');
+}
