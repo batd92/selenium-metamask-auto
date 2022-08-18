@@ -1,0 +1,1 @@
+Good friends, good books, and a sleepy conscience: this is the ideal life.
